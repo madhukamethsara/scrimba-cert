@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Theme Generator</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="controls">
+
+        <input type="color" id="colorPicker" value="#ff0000">
+        <select id="scheme-mode">
+
+            <option value="monochrome">
+                Monochrome
+            </option>
+
+            <option value="monochrome-dark">
+                Monochrome Dark
+            </option>
+
+            <option value="monochrome-light">
+                Monochrome Light
+            </option>
+
+            <option value="analogic">
+                Analogic
+            </option>
+
+            <option value="complement">
+                Complement
+            </option>
+
+            <option value="analogic-complement">
+                Analogic Complement
+            </option>
+
+            <option value="triad">
+                Triad
+            </option>
+
+            <option value="quad">
+                Quad
+            </option>
+
+        </select>
+        <button id="get-colors">
+            Get color scheme
+        </button>
+
+    </div>
+    <div id="palette"></div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
