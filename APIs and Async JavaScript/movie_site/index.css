@@ -1,0 +1,521 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: white;
+    min-height: 100vh;
+}
+
+
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 340px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("img/image.png");
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: -1;
+}
+
+
+
+
+h1 {
+    position: absolute;
+    top: 105px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 40px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+
+
+.container {
+    width: 100%;
+    height: 340px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+}
+
+.Movie-image {
+    width: 100%;
+    height: 340px;
+
+    object-fit: cover;
+
+    opacity: 0.15;
+}
+
+
+
+
+#watch-list {
+    position: absolute;
+
+    top: 105px;
+    right: 12%;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#watch-list:hover {
+    color: #cccccc;
+}
+
+
+
+.searching {
+    position: absolute;
+
+    top: 205px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 550px;
+
+    height: 55px;
+
+    display: flex;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+
+
+
+#moviename {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 0 20px;
+
+    font-size: 16px;
+
+    color: #333;
+
+    background: #ffffff;
+}
+
+#moviename::placeholder {
+    color: #777;
+}
+
+
+
+
+#search {
+    width: 110px;
+
+    border: none;
+
+    background: #dddddd;
+
+    color: #333;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#search:hover {
+    background: #cfcfcf;
+}
+
+
+
+#movie-results {
+    width: 550px;
+
+    margin: 390px auto 50px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+
+.movie-card {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #333333;
+
+    min-height: 150px;
+}
+
+
+
+.movie-card > img {
+    width: 85px;
+    height: 125px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 2px;
+
+    background: #222222;
+}
+
+
+
+
+.movie-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+}
+
+.movie-info h2 {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+    color: #eeeeee;
+}
+
+.movie-info p {
+    font-size: 13px;
+
+    color: #aaaaaa;
+
+    margin-bottom: 7px;
+}
+
+
+.watchlist-btn {
+    width: fit-content;
+
+    margin-top: 5px;
+
+    padding: 6px 10px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #eeeeee;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.watchlist-btn:hover {
+    background: #333333;
+}
+
+
+
+
+#movie-results > p {
+    text-align: center;
+
+    color: #888888;
+
+    font-size: 16px;
+
+    padding: 40px 0;
+}
+
+
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 32px;
+        top: 100px;
+    }
+
+    #watch-list {
+        top: 150px;
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+    .searching {
+        width: 90%;
+
+        top: 210px;
+    }
+
+    #movie-results {
+        width: 90%;
+
+        margin-top: 380px;
+    }
+
+    .movie-card {
+        gap: 15px;
+    }
+
+    .movie-card > img {
+        width: 75px;
+        height: 110px;
+    }
+
+    .movie-info h2 {
+        font-size: 16px;
+    }
+}
+
+
+
+body.watchlist-page h1 {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    text-align: center;
+
+    margin-top: 70px;
+    margin-bottom: 30px;
+
+    font-size: 36px;
+}
+
+
+#back-button {
+    display: block;
+
+    margin: 0 auto 40px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #444444;
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#back-button:hover {
+    background: #333333;
+}
+
+
+
+#watchlist-container {
+    width: 550px;
+
+    margin: 0 auto 50px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#watchlist-container .movie-card {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #333333;
+
+    min-height: 150px;
+}
+
+
+#watchlist-container .movie-card > img {
+    width: 85px;
+    height: 125px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 2px;
+
+    background: #222222;
+}
+
+
+#watchlist-container .movie-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+}
+
+
+#watchlist-container .movie-info h2 {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+    color: #eeeeee;
+}
+
+
+#watchlist-container .movie-info p {
+    font-size: 13px;
+
+    color: #aaaaaa;
+
+    margin-bottom: 7px;
+}
+
+
+.remove-btn {
+    width: fit-content;
+
+    margin-top: 8px;
+
+    padding: 6px 12px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #eeeeee;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.remove-btn:hover {
+    background: #333333;
+
+    color: #ffffff;
+}
+
+
+#watchlist-container > h2 {
+    text-align: center;
+
+    color: #888888;
+
+    font-size: 16px;
+
+    font-weight: normal;
+
+    padding: 40px 0;
+}
+
+
+
+@media (max-width: 700px) {
+
+    body.watchlist-page h1 {
+        font-size: 30px;
+
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+
+
+    #watchlist-container {
+        width: 90%;
+    }
+
+
+    #watchlist-container .movie-card {
+        gap: 15px;
+    }
+
+
+    #watchlist-container .movie-card > img {
+        width: 75px;
+        height: 110px;
+    }
+
+
+    #watchlist-container .movie-info h2 {
+        font-size: 16px;
+    }
+
+
+    .remove-btn {
+        font-size: 12px;
+
+        padding: 6px 10px;
+    }
+}
